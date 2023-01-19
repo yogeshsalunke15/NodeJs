@@ -1,0 +1,327 @@
+{
+  "$schema" : "http://json-schema.org/draft-07/schema#",
+  "$id" : "https://censhare.com/external-app-config.schema.json",
+  "title" : "Configuration",
+  "description" : "External App Configuration",
+  "type" : "object",
+  "properties" : {
+    "asset-management" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the asset management microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "hotfolder" : {
+      "type" : "object",
+      "properties" : {
+        "services" : {
+          "type" : "array",
+          "items" : [ {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string"
+              },
+              "config" : {
+                "type" : "object",
+                "properties" : {
+                  "hotfolderDevUrlRest" : {
+                    "type" : "string"
+                  },
+                  "filesystem" : {
+                    "type" : "object",
+                    "properties" : {
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "url" : {
+                        "type" : "string"
+                      },
+                      "protocol" : {
+                        "type" : "string"
+                      }
+                    },
+                    "required" : [ "name", "url", "protocol" ]
+                  },
+                  "poll-interval" : {
+                    "type" : "string"
+                  },
+                  "topicAndFilterConfigs" : {
+                    "type" : "array",
+                    "items" : [ {
+                      "type" : "object",
+                      "properties" : {
+                        "topic" : {
+                          "type" : "string"
+                        },
+                        "filter" : {
+                          "type" : "string"
+                        }
+                      },
+                      "required" : [ "topic", "filter" ]
+                    } ]
+                  }
+                },
+                "required" : [ "hotfolderDevUrlRest", "filesystem", "poll-interval", "topicAndFilterConfigs" ]
+              }
+            },
+            "required" : [ "name", "config" ]
+          } ]
+        }
+      },
+      "required" : [ "services" ]
+    },
+    "configuration-management" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the asset management microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "file" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the asset management microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "cloud-gateway" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the cloud-gateway microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "command-status" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the command-status microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "image" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the image microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "masterdata" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the masterdata microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "permission" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the permission microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "query-service" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the query-service microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "userdata" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS microservices",
+      "properties" : {
+        "config" : {
+          "type" : "object",
+          "description" : "The parameters of the userdata microservice",
+          "properties" : {
+            "logLevelRoot" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            },
+            "logLevelMainPackage" : {
+              "type" : "string",
+              "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+            }
+          },
+          "required" : [ "logLevelMainPackage" ],
+          "additionalProperties" : false
+        }
+      },
+      "required" : [ "config" ],
+      "additionalProperties" : false
+    },
+    "global" : {
+      "type" : "object",
+      "description" : "The parameters of the ETS global microservices",
+      "properties" : {
+        "logLevelRoot" : {
+          "type" : "string",
+          "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+        },
+        "logLevelMainPackage" : {
+          "type" : "string",
+          "enum" : [ "INFO", "DEBUG", "WARN", "ERROR", "TRACE", "FATAL", "OFF" ]
+        }
+      },
+      "required" : [ "logLevelMainPackage" ],
+      "additionalProperties" : false
+    }
+  },
+  "required" : [ "asset-management", "configuration-management", "file", "global", "hotfolder", "cloud-gateway", "command-status", "image", "masterdata", "permission", "query-service", "userdata" ],
+  "additionalProperties" : false
+}

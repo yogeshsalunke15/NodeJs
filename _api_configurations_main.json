@@ -1,0 +1,84 @@
+{
+  "configuration-management" : {
+    "config" : {
+      "logLevelRoot" : "INFO",
+      "logLevelMainPackage" : "WARN"
+    }
+  },
+  "asset-management" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "WARN"
+    }
+  },
+  "file" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "cloud-gateway" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "command-status" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "TRACE"
+    }
+  },
+  "image" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "masterdata" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "permission" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "query-service" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "userdata" : {
+    "config" : {
+      "logLevelRoot" : "DEBUG",
+      "logLevelMainPackage" : "DEBUG"
+    }
+  },
+  "hotfolder" : {
+    "services" : [ {
+      "name" : "hotfolder-one",
+      "config" : {
+        "topicAndFilterConfigs" : [ {
+          "filter" : ".*",
+          "topic" : "hotfolderonetopic1"
+        } ],
+        "hotfolderDevUrlRest" : "hotfolder-one-rest.censhare.com",
+        "poll-interval" : "PT1M",
+        "filesystem" : {
+          "protocol" : "default",
+          "name" : "hotfolder-one",
+          "url" : "file:work/hotfolder1"
+        }
+      }
+    } ]
+  },
+  "global" : {
+    "logLevelRoot" : "INFO",
+    "logLevelMainPackage" : "INFO"
+  }
+}
